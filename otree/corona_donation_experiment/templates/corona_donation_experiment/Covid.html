@@ -1,0 +1,79 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block app_scripts %}
+<script src="{% static 'showCovidCases.js' %}"></script>
+{% endblock %}
+
+{% block title %}
+Experiences with COVID-19
+{% endblock %}
+
+{% block content %}
+
+<div class="form-group required">
+  <label class="col-form-label" for="id_qCasesUtlaEstimated">
+    How many <b>confirmed COVID-19 cases</b> are there in
+    <b>
+      <span class="zip">
+        your area
+      </span>
+    </b>
+    to date? Please enter your guess:
+  </label>
+  <div class="controls  field-qCasesUtlaEstimated">
+    <input type="number"
+           name="qCasesUtlaEstimated"
+           required=""
+           id="id_qCasesUtlaEstimated"
+           class="form-control"
+           min="1"
+           max="999999999">
+  </div>
+  <div class="alert alert-primary mt-2">
+    <u>Your guess</u>:
+    <b>
+      <span id="id_qCasesUtlaEstimatedDisplay">
+        -
+      </span>
+    </b>
+    confirmed cases in
+    <span class="zip">
+      your area
+    </span>.
+  </div>
+</div>
+
+{% autoescape off %}
+{% formfield player.qCasesUtlaMoreSevere %}
+{% endautoescape %}
+
+<div class="form-group required">
+  <label class="col-form-label" for="id_qCasesUkEstimated">
+    How many <b>confirmed COVID-19 cases</b> are there in the <b>UK</b> to date?
+    Please enter your guess:
+  </label>
+  <div class="controls  field-qCasesUkEstimated">
+    <input type="number"
+           name="qCasesUkEstimated"
+           required=""
+           id="id_qCasesUkEstimated"
+           class="form-control"
+           min="1"
+           max="999999999">
+  </div>
+  <div class="alert alert-primary mt-2">
+    <u>Your guess</u>:
+    <b>
+      <span id="id_qCasesUkEstimatedDisplay">
+        -
+      </span>
+    </b>
+    confirmed cases in the UK.
+  </div>
+</div>
+
+{% formfield player.qCasesUkMoreSevere %}
+
+{% include "global/buttons.html" %}
+{% endblock %}

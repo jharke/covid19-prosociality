@@ -1,0 +1,66 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+COVID-19 risks and policies to counteract the pandemic
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  {% formfield player.qCovidRisk %}
+  {% formfield player.qLockdown %}
+  {% formfield player.qPolicies %}
+  {% formfield player.qCovidManmade %}
+  {% formfield player.qCovidOnPurpose %}
+
+  <div class="form-group required">
+    <label class="col-form-label" for="id_qCovidOvercome">
+      When do you think the COVID-19 pandemic will be over in the UK?
+    </label>
+    <div class="form-inline">
+      <label class="col-form-label mr-2">In</label>
+      <div class="em-4">
+        <div class="controls field-qCovidOvercome">
+          <input
+              type="number"
+              name="qCovidOvercome"
+              class="number-text form-control"
+              min="0"
+              max="999"
+              required=""
+              id="id_qCovidOvercome">
+        </div>
+      </div>
+      <label class="col-form-label ml-2">months</label>
+    </div>
+  </div>
+
+  <div class="form-group required">
+    <label class="col-form-label" for="id_qVaccine">
+      When do you think that a vaccination against COVID-19 will be
+      widely available in UK?
+    </label>
+    <div class="form-inline">
+      <label class="col-form-label mr-2">In</label>
+      <div class="em-4">
+        <div class="controls field-qVaccine">
+          <input
+              type="number"
+              name="qVaccine"
+              class="number-text form-control"
+              min="0"
+              max="999"
+              required=""
+              id="id_qVaccine">
+        </div>
+      </div>
+      <label class="col-form-label ml-2">months</label>
+    </div>
+  </div>
+
+  {% formfield player.qVaccinate %}
+
+</div>
+{% include "global/buttons.html" %}
+{% endblock %}

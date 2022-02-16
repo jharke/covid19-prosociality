@@ -1,0 +1,132 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Your health situation since the outbreak of COVID-19
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% formfields %}
+
+  <div class="alert alert-primary">
+    <h3 class="alert-heading row">
+      NHS provides following information:
+    </h3>
+    <hr>
+    <dl class="row">
+      <dt class="col-sm-1">*</dt>
+      <dd class="col-sm-11">
+        <h5>
+          People at
+          <b>
+            high risk
+          </b>
+          (clinically extremely vulnerable)
+          <br>
+          from coronavirus include people who:
+        </h5>
+        <ul>
+          <li>
+            have had an organ transplant
+          </li>
+          <li>
+            are having chemotherapy or antibody treatment for cancer,
+            including immunotherapy
+          </li>
+          <li>
+            are having an intense course of radiotherapy (radical
+            radiotherapy) for lung cancer
+          </li>
+          <li>
+            are having targeted cancer treatments that can affect the
+            immune system (such as protein kinase inhibitors or PARP
+            inhibitors)
+          </li>
+          <li>
+            have blood or bone marrow cancer (such as leukaemia,
+            lymphoma or myeloma)
+          </li>
+          <li>
+            have had a bone marrow or stem cell transplant in the past
+            6 months, or are still taking immunosuppressant medicine
+          </li>
+          <li>
+            have been told by a doctor they you have a severe lung
+            condition (such as cystic fibrosis, severe asthma or
+            severe COPD)
+          </li>
+          <li>
+            have a condition that means they have a very high risk of
+            getting infections (such as SCID or sickle cell)
+          </li>
+          <li>
+            are taking medicine that makes them much more likely to
+            get infections (such as high doses of steroids)
+          </li>
+          <li>
+            have a serious heart condition and are pregnant
+          </li>
+        </ul>
+      </dd>
+    </dl>
+    <hr>
+    <dl class="row">
+      <dt class="col-sm-1">**</dt>
+      <dd class="col-sm-11">
+        <h5>
+          People at
+          <b>
+            moderate risk
+          </b>
+          (clinically vulnerable)
+          <br>
+          from coronavirus include people who:
+        </h5>
+        <ul>
+          <li>
+            are 70 or older
+          </li>
+          <li>
+            are pregnant
+          </li>
+          <li>
+            have a lung condition that's not severe (such as asthma,
+            COPD, emphysema or bronchitis)
+          </li>
+          <li>
+            have heart disease (such as heart failure)
+          </li>
+          <li>
+            have diabetes
+          </li>
+          <li>
+            have chronic kidney disease
+          </li>
+          <li>
+            have liver disease (such as hepatitis)
+          </li>
+          <li>
+            have a condition affecting the brain or nerves (such as
+            Parkinson's disease,&nbsp;motor neurone
+            disease,&nbsp;multiple sclerosis or cerebral palsy)
+          </li>
+          <li>
+            have a condition that means they have a high risk of
+            getting infections
+          </li>
+          <li>
+            are taking medicine that can affect the immune system
+            (such as low doses of steroids)
+          </li>
+          <li>
+            are very obese (a BMI of 40 or above)
+          </li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+
+</div>
+{% include "global/buttons.html" %}
+{% endblock %}

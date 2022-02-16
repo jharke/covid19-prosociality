@@ -1,0 +1,38 @@
+
+<div class="container text-center">
+  {% extends "global/Page.html" %}
+  {% load otree static%}
+
+  {% block app_scripts %}
+  <script src="{% static 'payment_info/redirectProlific.js' %}"></script>
+  {% endblock %}
+
+  {% block app_styles %}
+  <link rel="stylesheet"
+        type="text/css"
+        href="{% static 'payment_info/waitAnimation.css' %}"></link>
+  {% endblock %}
+
+
+  {% block title %}
+  Loading Prolific
+  {% endblock %}
+
+  {% block content %}
+
+  <p>
+    Please wait until Prolific page is fully loaded that we can process
+    the payment correctly.
+  </p>
+
+  <div class="loader"></div>
+
+  <br>
+  <p>
+    <a id="prolific"
+       class="text-muted"
+       href="https://www.example.com/{{participant.label}}">Click if not redirected...</a>
+  </p>
+
+  {% endblock %}
+</div>

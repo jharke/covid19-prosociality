@@ -1,0 +1,26 @@
+
+{% load otree %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="btn-group float-right">
+        <div class="pl-3">{% next_button %}</div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="progress">
+        <div
+            class="progress-bar progress-bar-striped"
+            role="progressbar"
+            style="width: {{ page_number }}%"
+            aria-valuenow="{{ page_number }}"
+            aria-valuemin="0"
+            aria-valuemax="100">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

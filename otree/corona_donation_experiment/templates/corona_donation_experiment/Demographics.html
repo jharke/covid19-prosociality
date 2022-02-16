@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Now we would like to ask you some questions
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% formfields %}
+</div>
+{% include "global/buttons.html" %}
+{% endblock %}

@@ -1,0 +1,110 @@
+
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block app_scripts %}
+<script src="{% static 'showValuesLocal.js' %}"></script>
+{% endblock %}
+
+{% block title %}
+What should the donation be used for?
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row align-items-center">
+    <div class="text-center col-12 alert alert-warning">
+      {% if player.donation == 0 %}
+      <p>
+        In addition to the £1 budget that we offered on the previous
+        screen, we are going to donate
+        <b>
+          £100
+        </b>
+        to Save the Children.
+      </p>
+      <p>
+        We'd like you to help us decide how to divide this donation
+        between Save the Children's work around the UK and around the
+        world. Once the study is finished, we will divide the money
+        between the two programmes by averaging the decisions made by
+        participants like you and donate to Save the Children.
+      </p>
+      <p>
+        How much of this additional donation do you want to allocate
+        to either cause?
+      </p>
+      {% else %}
+      <p>
+        Your donation is
+        <b>
+          £{{ total_donation }}
+        </b>.
+      </p>
+      <p>
+        How much of your donation do you want to allocate to either
+        cause?
+      </p>
+      {% endif %}
+    </div>
+    <div class="w-100"></div>
+    <div class="text-center col-4 alert alert-primary">
+      Save the Children's
+      <br>
+      work around the UK
+    </div>
+    <div class="col-4">
+    </div>
+    <div class="text-center col-4 alert alert-primary">
+      Save the Children's
+      <br>
+      work around the world
+    </div>
+    <div class="w-100"></div>
+    <div class="col-3">
+      <div class="row">
+        <div class="col-12 text-center alert alert-secondary">
+          <b>UK</b>
+          <hr>
+          <div id="valueLocal">
+            -
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group required">
+        <div class="controls field-donation">
+          <div class="input-group slider">
+            <input id="global_share"
+                   class="slider"
+                   type="range"
+                   name="global_share"
+                   min="0"
+                   max="1"
+                   step="0.01">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="row">
+        <div class="col-12 text-center alert alert-secondary">
+          <b>World</b>
+          <hr>
+          <div id="valueGlobal">
+            -
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ form.global_share.errors }}
+
+{% formfield player.initial_global_share %}
+{% formfield player.global_donation %}
+
+{% include "global/buttons.html" %}
+{% endblock %}

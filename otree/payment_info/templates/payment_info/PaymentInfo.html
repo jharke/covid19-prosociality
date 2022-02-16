@@ -1,0 +1,85 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Thank you for participation in this study!
+{% endblock %}
+
+{% block content %}
+
+<div class="card border-primary my-2">
+  <div class="card-header">
+    <h5>Payment</h5>
+  </div>
+  <div class="card-body"
+       title="In case something went wrong, please make a screenshot and contact us via Prolific.">
+    <p>
+      For your participation in this study you will receive
+      {{participation_fee }} on your Prolific account
+      <b>{{ participant.label }}</b>. Based on your decisions you will
+      receive the additional {{ payoff }} in a form of a bonus after
+      the end of the study. The latter might take some time, so we ask
+      you to be patient.
+    </p>
+  </div>
+</div>
+<div class="card border-primary my-2">
+  <div class="card-header">
+    <h5>Donation</h5>
+  </div>
+  <div class="card-body">
+    {% if non_donor %}
+    We will take into account your decisions when transferring the donation:
+    {% else %}
+    Based on your decisions we will transfer following amounts:
+    {% endif %}
+    <ul>
+      <li>
+        {{ local_donation }} to Save the Children's work around the UK.
+      </li>
+      <li>
+        {{ global_donation }} to Save the Children's work around the world.
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="card border-primary my-2">
+  <div class="card-header">
+    <h5>Comments</h5>
+  </div>
+  <div class="card-body">
+    {% formfields %}
+  </div>
+</div>
+
+<div class="card border-primary my-2">
+  <div class="card-header">
+    <h5>Contact</h5>
+  </div>
+  <div class="card-body">
+    <p>
+      For further questions please contact us under
+      <a href="mailto:donationstudy@wzb.eu?subject=WZB%20donation%20study">
+        donationstudy@wzb.eu
+      </a>
+    </p>
+    <p>
+      If you send us an email or a message on Prolific we are happy to
+      share the donation receipt for the sum of donations after the
+      end of our study.
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="btn-group float-right">
+        <div class="pl-3">{% next_button %}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Your work situation
+{% endblock %}
+
+{% block app_scripts %}
+<script src="{% static 'showCommuteQuestions.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% autoescape off %}
+
+  {% formfield player.qWorkFulltime %}
+  {% formfield player.qWorkChange %}
+
+  <div class="alert alert-secondary">
+    If your experiences are not described well enough by one of the
+    options above, please
+    <a data-toggle="collapse" href="#qWorkChangeText" aria-expanded="false" aria-controls="qWorkChangeText">
+      click here.
+    </a>
+    <div class="collapse" id="qWorkChangeText">
+      {% formfield player.qWorkChangeText %}
+    </div>
+  </div>
+
+  {% formfield player.qCommuteBefore %}
+  {% formfield player.qCommuteModeBefore %}
+  {% formfield player.qCommuteTimeBefore %}
+  {% formfield player.qCommuteAfter %}
+  {% formfield player.qCommuteModeAfter %}
+  {% formfield player.qCommuteTimeAfter %}
+  {% formfield player.qDistanceWork %}
+  {% formfield player.qRemoteWork %}
+
+  {% endautoescape %}
+</div>
+{% include "global/buttons.html" %}
+{% endblock %}

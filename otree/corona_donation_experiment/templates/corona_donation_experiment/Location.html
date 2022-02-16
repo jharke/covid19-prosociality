@@ -1,0 +1,53 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+
+{% block app_scripts %}
+<script src="{% static 'autoComplete.min.js' %}"></script>
+<script src="{% static 'completeArea.js' %}"></script>
+{% endblock %}
+
+
+{% block app_styles %}
+<link rel="stylesheet"
+      type="text/css"
+      href="{% static 'autoComplete.css' %}"></link>
+{% endblock %}
+
+{% block title %}
+In which area do you live?
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <p>
+    Select your area from the list that will be shown after you start
+    typing one of the following options:
+  </p>
+  <ul>
+    <li>First part of your postcode.</li>
+    <li>Name of your area, county or council.</li>
+  </ul>
+
+
+  {% formfield player.qLocationInput %}
+  <div id="location-selection" class="alert alert-primary" style="display: none;"></div>
+
+  {% formfield player.qLocation %}
+
+  <br>
+  <br>
+  <hr>
+  <div class="alert alert-secondary">
+    If you cannot find your area from the input field above, please
+    <a data-toggle="collapse" href="#qZip" aria-expanded="false" aria-controls="qZip">
+      click here.
+    </a>
+    <div class="collapse" id="qZip">
+      {% formfield player.qZip %}
+    </div>
+  </div>
+
+</div>
+{% include "global/buttons.html" %}
+{% endblock %}

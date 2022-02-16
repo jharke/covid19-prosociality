@@ -1,0 +1,172 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block app_scripts %}
+<script src="{% static 'showValuesEconomic.js' %}"></script>
+{% endblock %}
+
+{% block app_styles %}
+<link rel="stylesheet"
+      type="text/css"
+      href="{% static 'showValuesEconomic.css' %}"></link>
+{% endblock %}
+
+{% block title %}
+Economic situation in 2020
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="form-group required">
+    <label class="col-form-label" for="id_qGdpUk">
+      In 2019, UK GDP grew by 1.4%. What is your estimate of the GDP
+      growth in the UK in 2020?
+    </label>
+    <div class="controls field-qGdpUk">
+      <div class="input-group slider">
+        <div class="row w-100">
+          <div class="col">
+            <input type="range"
+                   name="qGdpUk"
+                   value="None"
+                   step="0.1"
+                   class="form-control w-100 required-range"
+                   min="-25"
+                   max="25"
+                   required=""
+                   id="id_qGdpUk">
+          </div>
+          <div class="col-1 slider-box">
+            <span id="id_qGdpUk_value"
+                  class="slider-value transparent"
+                  title="current value">
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group required">
+    <label class="col-form-label" for="id_qGdpDeveloping">
+      In 2019, IMF found the GDP growth in the developing economies
+      was 3.7%. What is your estimate of the GDP growth in the
+      developing economies in 2020?
+    </label>
+    <div class="controls field-qGdpDeveloping">
+      <div class="input-group slider">
+        <div class="row w-100">
+          <div class="col">
+            <input type="range"
+                   name="qGdpDeveloping"
+                   value="None"
+                   step="0.1"
+                   class="form-control w-100 required-range"
+                   min="-25"
+                   max="25"
+                   required=""
+                   id="id_qGdpDeveloping">
+          </div>
+          <div class="col-1 slider-box">
+            <span id="id_qGdpDeveloping_value"
+                  class="slider-value transparent"
+                  title="current value">
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group required">
+    <label class="col-form-label" for="id_qPoveryUk">
+      In 2019, 22% of the UK population were living in poverty.* What
+      is your estimate for the poverty rate in the UK in 2020?
+    </label>
+    <div class="controls field-qPoveryUk">
+      <div class="input-group slider">
+        <div class="row w-100">
+          <div class="col">
+            <input type="range"
+                   name="qPoveryUk"
+                   value="None"
+                   step="1"
+                   class="form-control w-100 required-range"
+                   min="0"
+                   max="50"
+                   required=""
+                   id="id_qPoveryUk">
+          </div>
+          <div class="col-1 slider-box">
+            <span id="id_qPoveryUk_value"
+                  class="slider-value transparent"
+                  title="current value">
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group required">
+    <label class="col-form-label" for="id_qPoveryDeveloping">
+      In 2019, 23% of people in the developing countries were
+      multidimensionally poor.** What is your estimate for the
+      multidimentional poverty rate in the developing countries in
+      2020?
+    </label>
+    <div class="controls field-qPoveryDeveloping">
+      <div class="input-group slider">
+        <div class="row w-100">
+          <div class="col">
+            <input type="range"
+                   name="qPoveryDeveloping"
+                   value="None"
+                   step="1"
+                   class="form-control w-100 required-range"
+                   min="0"
+                   max="50"
+                   required=""
+                   id="id_qPoveryDeveloping">
+          </div>
+          <div class="col-1 slider-box">
+            <span id="id_qPoveryDeveloping_value"
+                  class="slider-value transparent"
+                  title="current value">
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-primary">
+    <dl class="row">
+      <dt class="col-sm-1">*</dt>
+      <dd class="col-sm-11">
+        The Social Metrics Commission's measure considers "poverty
+        now": the extent to which the material resources that someone
+        has available to them now meet the needs that they currently
+        have.
+      </dd>
+    </dl>
+    <hr>
+    <dl class="row">
+      <dt class="col-sm-1">**</dt>
+      <dd class="col-sm-11">
+        United Nations Development Programme and Oxford Poverty and
+        Human Development Initiative considers a national
+        Multidimensional Poverty Index which is a country-specific
+        poverty measure tailored to each country's unique
+        situation. Such measures generally take the dimensions of
+        health, education and living standards as their starting
+        point, and supplement with different dimensions measured by
+        locally appropriate indicators.
+      </dd>
+    </dl>
+  </div>
+</div>
+{% include "global/buttons.html" %}
+{% endblock %}

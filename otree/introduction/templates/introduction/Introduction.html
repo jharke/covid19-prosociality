@@ -1,0 +1,71 @@
+
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Introduction
+{% endblock %}
+
+{% block content %}
+<p>
+  Thank you for signing up. This study consists of two parts. In the
+  first part, we ask you to make two decisions. In the second part,
+  you are supposed to answer some survey questions.
+</p>
+<p>
+  This research is very important to us. We therefore ask you to pay
+  attention and try to answer as precise as you can. Thank you!
+</p>
+<b>Payment</b>
+<br>
+<p>
+  If you complete both parts of the study, you will be paid at least
+  {{ session.participation_fee }}.
+</p>
+<p>
+  The maximum time allowed to complete this study is 49 minutes. You
+  will not be entitled to any payment if you exceed the maximum time
+  allowed.
+</p>
+
+<div class="card border-primary mb-3">
+  <div class="card-header">
+    <div class="row">
+      <h5 class="card-title col-9">Data protection information</h5>
+      <button class="btn btn-secondary col-3"
+              type="button"
+              aria-expanded="false"
+              onclick="changeShowHide($(this));">
+        Show
+      </button>
+    </div>
+  </div>
+  <div class="card-body collapse">
+    <p>
+      The Berlin Social Science Center (Wissenschaftszentrum Berlin
+      für Sozialforschung, WZB), Reichpietschufer 50, 10785 Berlin,
+      Germany is conducting a scientific study using Prolific today.
+    </p>
+
+    <p>
+      Your responses will be recorded on our server. The data
+      generated in the study will be separated from the data in the
+      Prolific system after the payment has been completed and will
+      not allow any inference on the participation respectively the
+      responses of individual persons. Correspondingly, the analysis
+      and presentation of all results of this survey will be
+      anonymized. The anonymous research data will be archived and
+      will possibly be made available to other scientists for further
+      use.
+    </p>
+
+    <p>
+      Participation in today’s study is entirely voluntary. You have
+      the possibility to exit the study at any time.
+    </p>
+  </div>
+</div>
+
+{% include "global/buttons.html" %}
+
+{% endblock %}

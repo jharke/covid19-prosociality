@@ -1,0 +1,35 @@
+textarea.form-control {
+    max-width: initial;
+}
+
+input[type="text"].form-control {
+    max-width: initial;
+}
+
+input[type="range"].form-control {
+    padding: .375rem 0rem;
+}
+
+.slider {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.input-group {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.form-control {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.slider-number {
+    width: 80% !important;
+    max-width: 80% !important;
+}
+
+.em-4 {
+	width: 4em !important;
+}

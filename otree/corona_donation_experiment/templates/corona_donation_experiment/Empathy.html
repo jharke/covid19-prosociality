@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Your thoughts and feelings
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% autoescape off %}
+  {% formfields %}
+  {% endautoescape %}
+</div>
+{% include "global/buttons.html" %}
+{% endblock %}

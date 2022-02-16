@@ -1,0 +1,71 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Behaviour since the outbreak of COVID-19
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  {% formfield player.qContactsReduced %}
+  {% formfield player.qBasicStock %}
+  {% formfield player.qMask %}
+
+  <label class="col-form-label">
+    For which of the following activities did you leave your house in
+    the last 4 weeks (multiple answers possible)?
+  </label>
+
+  <div class="form-group">
+    <div class="controls">
+      <ul id="id_qLeaveHome">
+        <li>
+          {% formfield player.qLeaveHome1 %}
+        </li>
+        <li>
+          {% formfield player.qLeaveHome2 %}
+        </li>
+        <li>
+          {% formfield player.qLeaveHome3 %}
+        </li>
+        <li>
+          {% formfield player.qLeaveHome4 %}
+        </li>
+        <li>
+          {% formfield player.qLeaveHome5 %}
+        </li>
+        <li>
+          {% formfield player.qLeaveHome6 %}
+        </li>
+        <li>
+          {% formfield player.qLeaveHome7 %}
+        </li>
+        <li>
+          {% formfield player.qLeaveHome8 %}
+        </li>
+        <li>
+          {% formfield player.qLeaveHome9 %}
+        </li>
+        <li>
+          {% formfield player.qLeaveHome10 %}
+        </li>
+        <li>
+          {% formfield player.qLeaveHome11 %}
+        </li>
+        <li>
+          {% formfield player.qLeaveHome12 %}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  {% formfield player.qFollowRules %}
+
+  {% formfield player.qCovidContribution %}
+
+  {% formfield player.qCovidContributionHow %}
+
+</div>
+{% include "global/buttons.html" %}
+{% endblock %}

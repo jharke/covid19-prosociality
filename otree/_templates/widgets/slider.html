@@ -1,0 +1,14 @@
+<div class="input-group slider" style="display:inline-block;">
+  <div class="input-group slider" data-slider>
+    {% include "django/forms/widgets/input.html" %}
+    {% if show_value %}
+    <div class="input-group-append">
+      <span class="input-group-text" data-slider-value title="current value"></span>
+    </div>
+    {% endif %}
+  </div>
+  {% if show_labels %}
+  <label class="float-left">{{ left_label }}</label>
+  <label class="float-right">{{ right_label }}</label>
+  {% endif %}
+</div>

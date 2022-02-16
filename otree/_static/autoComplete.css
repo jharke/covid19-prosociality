@@ -1,0 +1,9 @@
+.autoComplete_highlighted {
+    opacity: 1;
+    color: rgb(219, 21, 21);
+    font-weight: bold;
+}
+
+.autoComplete_selected {
+    background: #e4fce4;
+}

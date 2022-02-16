@@ -1,0 +1,26 @@
+<div class="container">
+  {% extends "otree/Page.html" %}
+  {% load otree static %}
+
+  {% block global_styles  %}
+  <link rel="stylesheet"
+        type="text/css"
+        href="{% static 'classSelected.css' %}"></link>
+  <link rel="stylesheet"
+        type="text/css"
+        href="{% static 'inputResize.css' %}"></link>
+  <link rel="stylesheet"
+        type="text/css"
+        href="{% static 'timerHide.css' %}"></link>
+  <link rel="stylesheet"
+        type="text/css"
+        href="{% static 'multipleChoice.css' %}"></link>
+  {% endblock %}
+
+  {% block global_scripts  %}
+  <script src="{% static 'hiddenFormGroup.js' %}"></script>
+  <script src="{% static 'classSelected.js' %}"></script>
+  <script src="{% static 'requiredRange.js' %}"></script>
+  <script src="{% static 'showHide.js' %}"></script>
+  {% endblock %}
+</div>

@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Your main news sources
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% autoescape off %}
+  {% formfields %}
+  {% endautoescape %}
+</div>
+{% include "global/buttons.html" %}
+{% endblock %}

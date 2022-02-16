@@ -1,0 +1,141 @@
+
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block app_scripts %}
+<script src="{% static 'showValuesDonations.js' %}"></script>
+{% endblock %}
+
+{% block title %}
+Please read the following information provided<br>
+by the charity <b>Save the Children</b>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="alert alert-info w-100">
+      <h5>
+        <b>
+          Save the Children - 100 Years Working With Children
+        </b>
+      </h5>
+
+      <p>
+        At the beginning of the 20th century, two sisters had a vision
+        to protect children and their rights. 100 years later, Save
+        the Children is still fighting to give children a healthy
+        start in life, the chance to learn and protection from harm.
+      </p>
+
+      <p>
+        Around the world and in the UK, too many children still start
+        life at a disadvantage simply because of who they are and
+        where they are from.
+      </p>
+
+      <p>
+        Save the Children has a bold ambition: we believe that all
+        children could thrive, have the chance to learn, and be
+        protected from abuse, neglect and exploitation.
+      </p>
+
+      {% if player.treatment_covid %}
+      <p>
+        The coronavirus is already having devastating consequences for
+        children and their rights. Health systems, both in poor
+        countries and the NHS, are being overwhelmed. Children have
+        had their education disrupted by school closures. Many face
+        the prospect of poverty.
+      </p>
+
+      <p>
+        With the pandemic now spreading into some of the world's
+        poorest countries and in the UK, there is a real danger that
+        we will see a reversal of the gains made over the last 20
+        years. There is an alternative.
+      </p>
+      {% endif %}
+      <p>
+        <b>
+          Please donate to our work
+        </b>
+        <br>
+        Your support will help
+        transform children's lives.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <p>
+        On top of the fixed payment of {{ session.participation_fee }}
+        you will receive an
+        <b>
+          additional budget of £1
+        </b>
+        that you can divide as you wish. You can keep it for yourself,
+        donate to Save the Children, or divide it between the
+        two.
+      </p>
+
+      <ul>
+        <li>
+          Whatever you decide to keep will be added to your payment.
+        </li>
+        <li>
+          Whatever you decide to donate will be donated by us to Save
+          the Children after the end of the study.
+        </li>
+      </ul>
+
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="text-center col-12 alert alert-warning">
+            How much do you want to donate?
+          </div>
+          <div class="w-100"></div>
+          <div class="col-3">
+            <div class="text-center alert alert-secondary">
+              <b>Keep for yourself</b>
+              <hr>
+              <div id="valueOwn">
+                -
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group required">
+              <div class="controls field-donation">
+                <div class="input-group slider">
+                  <input id="donation"
+                         class="slider"
+                         type="range"
+                         name="donation"
+                         min="0"
+                         max="1"
+                         step="0.01">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="text-center alert alert-secondary">
+              <b>Your donation to Save the Children</b>
+              <hr>
+              <div id="valueCharity">
+                -
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ form.donation.errors }}
+
+{% formfield player.initial_donation %}
+
+{% include "global/buttons.html" %}
+{% endblock %}

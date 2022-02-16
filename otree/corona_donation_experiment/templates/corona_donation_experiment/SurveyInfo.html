@@ -1,0 +1,36 @@
+
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Survey
+{% endblock %}
+
+{% block content %}
+<p>
+  In the second part, we ask you to answer some survey questions. The
+  topics of the survey are your experience with and opinions regarding
+  COVID-19* as well as your personal situation.
+</p>
+<p>
+  Your participation and your sincere answers are very important for
+  our research.
+</p>
+<p>
+  Your answers will be used for research purposes only. The analysis
+  and presentation of all results will not allow any inference on your
+  individual person.  In case you feel uncomfortable with any of the
+  questions, you can exit the survey at any point. However, if you do
+  not finish the survey, you will only be payed based on your decision
+  in the first part of the study.
+</p>
+
+<br>
+<div class="alert alert-primary">
+  * COVID-19 is the disease caused by SARS-CoV-2, also known as the
+  novel coronavirus.
+</div>
+
+{% include "global/buttons.html" %}
+
+{% endblock %}

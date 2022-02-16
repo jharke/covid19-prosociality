@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Your financial situation
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% autoescape off %}
+
+  <h4>Think of the last 12 months before the COVID-19 pandemic</h4>
+  {% formfield player.qIncome %}
+  {% formfield player.qMemBefore %}
+
+  <h4>Has your economic situation been affected by COVID-19 pandemic?</h4>
+  {% formfield player.qIncomeChange %}
+  {% formfield player.qMemFuture %}
+
+  <h4>In the next 12 months, do you expect that your economic situation will change?</h4>
+  {% formfield player.qIncomeFuture %}
+
+  {% endautoescape %}
+</div>
+{% include "global/buttons.html" %}
+{% endblock %}
