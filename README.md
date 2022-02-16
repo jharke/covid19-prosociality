@@ -1,4 +1,6 @@
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6105403.svg)](https://doi.org/10.5281/zenodo.6105403)
+
 This repository provides replication files for:
 
 **COVID-19 and pro-sociality: How do donors respond to local pandemic severity, increased salience, and media coverage?**
